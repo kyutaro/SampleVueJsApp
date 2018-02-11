@@ -2,7 +2,6 @@ var personData = {
     headline: '著者名',
     authors: '著者名',
     sentence: '青空文庫掲載の著者一覧を表示',
-    BirthAndDeath: '生没年',
     persons: []
 }
 
