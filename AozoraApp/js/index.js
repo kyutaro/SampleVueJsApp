@@ -10,7 +10,6 @@ var index = new Vue({
     },
     methods: {
         fetchData: function () {
-            console.log(this.search);
             var vm = this
             if(this.search.length == 0) {
                 var url = AOZORA_BOOKS_API_URL;
