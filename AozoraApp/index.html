@@ -6,9 +6,12 @@
     <link rel="stylesheet" href="css/template.css">
     <link rel="stylesheet" href="css/index.css">
     <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="js/constant.js"></script>
-    <script src="components/header.js"></script>
+    <script src="components/Header.js"></script>
+    <script src="components/Person.js"></script>
+    <script src="router/router.js"></script>
 </head>
 
 <body>
@@ -16,8 +19,12 @@
     <div id="index" class="wrap">
         <header>
             <header-item></header-item>
+            <p>
+                <router-link to="/person">Go to Person</router-link>
+            </p>
         </header>
         <div class="contents">
+            <router-view></router-view>
             <h3>{{ headline }}</h3>
             <input class="header-search" type="text" v-model="search" v-on:keyup.enter="fetchData" placeholder="作品名を完全一致で入力してください">
             <p>{{ message }}</p>

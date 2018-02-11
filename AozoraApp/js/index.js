@@ -26,5 +26,6 @@ var index = new Vue({
                 vm.posts = 'Error! Could not reach the API. ' + error
             })
         }
-    }
-})
+    },
+    router
+}).$mount('#index')
