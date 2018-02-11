@@ -10,6 +10,7 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="js/constant.js"></script>
     <script src="components/Header.js"></script>
+    <script src="components/Post.js"></script>
     <script src="components/Person.js"></script>
     <script src="router/router.js"></script>
 </head>
@@ -20,22 +21,13 @@
         <header>
             <header-item></header-item>
             <p>
+                <router-link to="/">Go to Post</router-link>
+                <br>
                 <router-link to="/person">Go to Person</router-link>
             </p>
         </header>
         <div class="contents">
             <router-view></router-view>
-            <h3>{{ headline }}</h3>
-            <input class="header-search" type="text" v-model="search" v-on:keyup.enter="fetchData" placeholder="作品名を完全一致で入力してください">
-            <p>{{ message }}</p>
-            <ul v-for="post in posts">
-                <li>
-                    <div>
-                        {{ title }}：{{ post.title }}<br> {{ authors }}：{{ post.authors[0].last_name }}{{ post.authors[0].first_name }}<br>
-                        <a :href="post.html_url" target="_blank">作品を読む</a>
-                    </div>
-                </li>
-            </ul>
         </div>
     </div>
 

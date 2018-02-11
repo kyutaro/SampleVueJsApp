@@ -1,6 +1,8 @@
 var personData = {
     headline: '著者名',
     authors: '著者名',
+    sentence: '青空文庫掲載の著者一覧を表示',
+    BirthAndDeath: '生没年',
     persons: []
 }
 
@@ -8,11 +10,11 @@ const Person = {
     template: '\
     <div>\
         <h3>{{ headline }}</h3>\
-        <button class="header-search" type="text" v-on:click="fetchPerson">著者名一覧を表示</button>\
+        <button class="header-search" type="text" v-on:click="fetchPerson">{{ sentence }}</button>\
         <ul v-for="person in persons">\
             <li>\
                     <div>\
-                        {{ authors }}：{{ person.last_name }}{{ person.first_name }}\
+                        {{ authors }}：{{ person.last_name }}{{ person.first_name }}<br>\
                     </div>\
             </li>\
         </ul>\
