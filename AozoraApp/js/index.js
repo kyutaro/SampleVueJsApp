@@ -8,13 +8,6 @@ var index = new Vue({
         authors: '作者名',
         posts: []
     },
-    watch: {
-        // この関数は question が変わるごとに実行されます。
-        question: function (newQuestion, oldQuestion) {
-            this.message = '検索しています...'
-            this.fetchData(message)
-        }
-    },
     methods: {
         fetchData: function () {
             console.log(this.search);
