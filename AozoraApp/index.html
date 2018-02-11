@@ -8,21 +8,23 @@
     <script src="https://unpkg.com/vue"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="js/constant.js"></script>
+    <script src="components/header.js"></script>
 </head>
 
 <body>
+
     <div id="index" class="wrap">
         <header>
-            <h2>{{ headline }}</h2>
-            <input class="header-search" type="text" v-model="search" v-on:keyup.enter="fetchData" placeholder="作品名を完全一致で入力してください">
-            <p>{{ message }}</p>
+            <header-item></header-item>
         </header>
         <div class="contents">
+            <h3>{{ headline }}</h3>
+            <input class="header-search" type="text" v-model="search" v-on:keyup.enter="fetchData" placeholder="作品名を完全一致で入力してください">
+            <p>{{ message }}</p>
             <ul v-for="post in posts">
                 <li>
                     <div>
-                        {{ title }}：{{ post.title }}<br>
-                        {{ authors }}：{{ post.authors[0].last_name }}{{ post.authors[0].first_name }}<br>
+                        {{ title }}：{{ post.title }}<br> {{ authors }}：{{ post.authors[0].last_name }}{{ post.authors[0].first_name }}<br>
                         <a :href="post.html_url" target="_blank">作品を読む</a>
                     </div>
                 </li>
